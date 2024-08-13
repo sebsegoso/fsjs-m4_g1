@@ -54,7 +54,7 @@ export const validateForm = (form = {}, formInputs = {}) => {
 
 export const clearHelpMessages = (formInputs) => {
     for (let key in formInputs) {
-      const helpElement = elementById(formInputs[key].helpId);
+      const helpElement = document.getElementById(formInputs[key].helpId);
       if (!helpElement) return;
       helpElement.innerHTML = "";
     }

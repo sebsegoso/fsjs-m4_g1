@@ -1,5 +1,6 @@
 import { getFormData, validateForm } from "../validation.js";
-import { Importacion } from "../clases.js";
+import { Importacion } from "../classes/importacion.js";
+
 
 const formInputs = {
   producto: {
@@ -11,15 +12,15 @@ const formInputs = {
   },
   numeroProductos: {
     inputId: "numeroProductos",
-    helpId: "numeroProductosHelp",
-    label: "numeroProductos",
+    helpId: "cantidadHelp",
+    label: "número de productos",
     required: true,
     type: "number",
   },
   precioUnitario: {
     inputId: "precioUnitario",
-    helpId: "precioUnitarioHelp",
-    label: "precioUnitario",
+    helpId: "precioHelp",
+    label: "precio unitario",
     required: true,
     type: "number",
   },

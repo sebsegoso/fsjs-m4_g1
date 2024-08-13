@@ -1,7 +1,8 @@
 import { clearHelpMessages, getFormData, validateForm } from "../validation.js";
-import { Empresa } from "../clases.js";
+import { Empresa } from "../classes/empresa.js";
 import { validaRut } from "../regex.js";
 
+const modalEmpresa = new bootstrap.Modal(document.getElementById("modalEmpresa"));
 const formInputs = {
   rutEmpresa: {
     inputId: "rutEmpresa",
@@ -22,27 +23,32 @@ const formInputs = {
 let nextEmpresaId = 1;
 
 const submitForm = function (event) {
-    event.preventDefault();
-    clearHelpMessages(formInputs)
+  event.preventDefault();
+  clearHelpMessages(formInputs);
 
-    const form = getFormData(formInputs);
+  const form = getFormData(formInputs);
 
-    const isValid = validateForm(form, formInputs);
+  const isValid = validateForm(form, formInputs);
 
-    const rutValido = validaRut(form.rutEmpresa);
-    if (!rutValido) {
-        document.getElementById(formInputs.rutEmpresa.helpId).innerText = "RUT Invalido";
-        return;
-    }
+  const rutValido = validaRut(form.rutEmpresa);
+  if (!rutValido) {
+    document.getElementById(formInputs.rutEmpresa.helpId).innerText =
+      "RUT Invalido";
+    return;
+  }
 
+  if (!isValid) return;
 
-    if (!isValid) return;
-        
-    const empresa = new Empresa(nextEmpresaId++, form.nombreEmpresa, form.rutEmpresa);
-    console.log(empresa);
-    console.log(`Empresa ${empresa.nombre} creada con exito`);
-
-    this.reset()
+  const empresa = new Empresa(
+    nextEmpresaId++,
+    form.nombreEmpresa,
+    form.rutEmpresa
+  );
+  console.log(empresa);
+  console.log(`Empresa ${empresa.nombre} creada con exito`);
+  modalEmpresa.hide();
+  event.target.reset();
+  return empresa;
 };
 
-export { formInputs, submitForm };
+export { formInputs, submitForm , modalEmpresa};
