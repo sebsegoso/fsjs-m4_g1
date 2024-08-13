@@ -1,7 +1,7 @@
 import { getFormData, validateForm } from "../validation.js";
 import { Importacion } from "../classes/importacion.js";
 
-
+const modalImportacion = new bootstrap.Modal(document.getElementById("modalImportacion"));
 const formInputs = {
   producto: {
     inputId: "producto",
@@ -43,8 +43,9 @@ const submitForm = function (event) {
   );
   console.log(importacion);
   console.log(`Importación creada con exito`);
-
+  modalImportacion.hide();
+  event.target.reset();
   this.reset();
 };
 
-export { formInputs, submitForm };
+export { formInputs, submitForm, modalImportacion };
