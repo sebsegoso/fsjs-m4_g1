@@ -20,6 +20,23 @@ const formInputs = {
   },
 };
 
+
+export function selectorEmpresas() {
+
+  const selector = document.getElementById('empresaImport');
+  const placeholder = selector.querySelector('option[value=""]');
+  selector.innerHTML = '';
+  selector.appendChild(placeholder); 
+
+  empresas.forEach((empresa, index) => {
+      const option = document.createElement('option');
+      option.value = index;
+      option.textContent = empresa.nombre;
+      selector.appendChild(option);
+  });
+}
+
+
 let nextEmpresaId = 1;
 
 const submitForm = function (event) {
@@ -44,6 +61,7 @@ const submitForm = function (event) {
     form.nombreEmpresa,
     form.rutEmpresa
   );
+  // selectorEmpresas();
   console.log(empresa);
   console.log(`Empresa ${empresa.nombre} creada con exito`);
   modalEmpresa.hide();

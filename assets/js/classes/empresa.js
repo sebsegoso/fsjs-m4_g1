@@ -43,7 +43,7 @@ class Empresa {
   totalImportaciones() {
     let total = 0;
     this.#importaciones.forEach((importacion) => {
-      total += importacion.calculartotal();
+      total += importacion.calcularTotal();
     });
     return total;
   }
@@ -58,18 +58,30 @@ class Empresa {
     const element = document.createElement("div");
     element.id = this.#idEmpresa;
     element.className = "accordion-item";
+
+    const importacionesHTML = this.#importaciones.map(importacion => `
+      <tr class="importacion-item">
+        <td> ${importacion.idImportacion}</td>
+        <td>${importacion.producto}</td>
+        <td>${importacion.numeroProductos}</td>
+        <td>${importacion.precioUnitario}</td>
+        <td>
+          <button class="btn btn-danger btn-sm eliminar-importacion-btn" data-importacion-id="${importacion.idImportacion}">Eliminar</button>
+        </td>
+      </tr>
+    `).join('');
+
     element.innerHTML = `
         <div class="accordion-header">
           <button class="accordion-button collapsed d-flex justify-content-between" 
-             type="button"
-             data-bs-toggle="collapse"
-             data-bs-target="#collapse-${this.#idEmpresa}"
-             aria-expanded="false"
-             aria-controls="collapse-${this.#idEmpresa}"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse-${this.#idEmpresa}"
+              aria-expanded="false"
+              aria-controls="collapse-${this.#idEmpresa}"
           >
             <span class="me-2">${this.#nombre}</span>
             <div id="">
-                <span data-bs-toggle="collapse" data-bs-target class="btn btn-sm btn-success agregar-importacion-btn">Agregar importación</span>
                 <span data-bs-toggle="collapse" data-bs-target class="btn btn-sm btn-info total-importaciones-btn">Suma total importaciones</span>
                 <span data-bs-toggle="collapse" data-bs-target class="btn btn-sm btn-info productos-por-precio-btn">Suma total por productos</span>
             </div> 
@@ -79,19 +91,24 @@ class Empresa {
           this.#idEmpresa
         }" class="accordion-collapse collapse" data-bs-parent="#accordionEmpresas">
             <div class="accordion-body">
-            ${this.#rut}
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Importacion</th>
+                  <th>Producto</th>
+                  <th>Numero de Productos</th>
+                  <th>Precio</th>
+                  <th>Eliminar</th>
+                  <p></p>
+                </tr>
+              </thead>
+              <tbody>                
+                ${importacionesHTML}            
+              </tbody>
+            </table>
             </div>
         </div>
     `;
-
-    // Agregar listeners a los botones
-
-    // Listener para el botón "Agregar importación"
-    element
-      .querySelector(".agregar-importacion-btn")
-      .addEventListener("click", () => {
-        alert(`importacion a ${this.#nombre}`);
-      });
 
     // Listener para el botón "Suma total importaciones"
     element
@@ -107,6 +124,19 @@ class Empresa {
       .addEventListener("click", () => {
         const totalProductos = this.productosPorPrecio();
         alert(`El total por productos es: ${totalProductos}`);
+      });
+      // eliminar importacion
+    element
+      .querySelectorAll(".eliminar-importacion-btn")
+      .forEach(button => {
+        button.addEventListener("click", (event) => {
+          console.log(event.target);
+          const importacionId = button.getAttribute("data-importacion-id");
+          this.eliminarImportacion(importacionId);
+          console.log(`Importacion con ID ${importacionId} eliminada`);
+          const row = button.closest("tr");
+          !!row && row?.remove();
+        });
       });
 
     return element;

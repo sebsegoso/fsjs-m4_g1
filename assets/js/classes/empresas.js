@@ -31,8 +31,24 @@ class Empresas {
     });
   }
 
+  selectorEmpresas() {
+    const selector = document.getElementById('empresaImport');
+    const placeholder = selector.querySelector('option[value=""]');
+    selector.innerHTML = '';
+    selector.appendChild(placeholder); 
+  
+    this.#empresas.forEach((empresa) => {
+      console.log('empresa', empresa, empresa.idEmpresa);
+        const option = document.createElement('option');
+        option.value = empresa.idEmpresa;
+        option.textContent = empresa.nombre;
+        selector.appendChild(option);
+    });
+  }
+
   agregarEmpresa(empresa) {
     this.#empresas.push(empresa);
+    this.selectorEmpresas()
     this.printEmpresas();
     return this.#empresas;
   }

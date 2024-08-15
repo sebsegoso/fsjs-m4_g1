@@ -7,6 +7,14 @@
   font-family: "Roboto", sans-serif;
 }
 
+h1 {
+  font-weight: 700;
+}
+
+h2 {
+  font-weight: 700;
+}
+
 #form {
   max-width: 50%;
   min-width: 260px;
@@ -22,11 +30,35 @@ body {
   padding-bottom: 80px;
 }
 
+.btn-container {
+  border-radius: 5px;
+  padding: 2rem 0;
+  margin: 2rem 0;
+}
+
 .btn-main {
   display: block;
   width: 15rem;
   height: 5rem;
   font-weight: 700;
+  margin-inline: auto;
+}
+
+.btn-primary {
+  background-color: #2F97C1;
+  border: 1px solid #2F97C1;
+}
+
+.btn-primary:disabled {
+  background-color: #2F97C1;
+  border: 1px solid #2F97C1;
+  opacity: 40%;
+}
+
+.btn-primary:hover {
+  background-color: #1CCAD8;
+  color: #000;
+  border: 1px solid #1CCAD8;
 }
 /* 
 .btn-container {
