@@ -1,0 +1,86 @@
+[
+    {
+        "id": "1",
+        "text": "Agricultura, Ganadería, Silvicultura y Pesca"
+    },
+    {
+        "id": "2",
+        "text": "Explotación de Minas y Canteras"
+    },
+    {
+        "id": "3",
+        "text": "Industrias Manufactureras"
+    },
+    {
+        "id": "4",
+        "text": "Suministro de Electricidad, Gas, Vapor y Aire Acondicionado"
+    },
+    {
+        "id": "5",
+        "text": "Suministro de Agua; Evacuación de Agua Residuales, Gestión de Desechos y Descontaminación"
+    },
+    {
+        "id": "6",
+        "text": "Construcción"
+    },
+    {
+        "id": "7",
+        "text": "Comercio al Por Mayor y al por Menor; Reparación de Vehículos Automotores y Motocicletas"
+    },
+    {
+        "id": "8",
+        "text": "Transporte y Almacenamiento"
+    },
+    {
+        "id": "9",
+        "text": "Actividades de Alojamiento y de Servicio de Comidas"
+    },
+    {
+        "id": "10",
+        "text": "Información y Comunicaciones"
+    },
+    {
+        "id": "11",
+        "text": "Actividades Financieras y de Seguros"
+    },
+    {
+        "id": "12",
+        "text": "Actividades Inmobiliarias"
+    },
+    {
+        "id": "13",
+        "text": "Actividades Profesionales, Científicas y Técnicas"
+    },
+    {
+        "id": "14",
+        "text": "Actividades de Servicios Administrativos y de Apoyo"
+    },
+    {
+        "id": "15",
+        "text": "Adm. Pública y Defensa; Planes de Seguridad Social de Afiliación Obligatoria"
+    },
+    {
+        "id": "16",
+        "text": "Enseñanza"
+    },
+    {
+        "id": "17",
+        "text": "Actividades de Atención de la Salud Humana y de Asistencia Social"
+    },
+    {
+        "id": "18",
+        "text": "Actividades Artísticas, de Entretenimiento y Recreativas"
+    },
+    {
+        "id": "19",
+        "text": "Otras Actividades de Servicios"
+    },
+    {
+        "id": "20",
+        "text": "Actividades de los Hogares como Empleadores; Actividades No Diferenciadas de los Hogares"
+    },
+    {
+        "id": "21",
+        "text": "Actividades de Organizaciones y Órganos Extraterritoriales"
+    }
+]

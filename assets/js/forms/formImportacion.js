@@ -1,7 +1,9 @@
 import { getFormData, validateForm, clearHelpMessages } from "../validation.js";
 import { Importacion } from "../classes/importacion.js";
 
-const modalImportacion = new bootstrap.Modal(document.getElementById("modalImportacion"));
+const modalImportacion = new bootstrap.Modal(
+  document.getElementById("modalImportacion")
+);
 const formInputs = {
   producto: {
     inputId: "producto",
@@ -43,7 +45,7 @@ const submitForm = function (event, empresas) {
   const isValid = validateForm(form, formInputs);
 
   if (!isValid) return;
-
+  
   const importacion = new Importacion(
     nextImportacionId++,
     form.producto,
@@ -51,22 +53,24 @@ const submitForm = function (event, empresas) {
     form.precioUnitario,
   );
 
-  const empresaId = form.selectEmpresaImport
-  const empresaInstancia = empresas.empresas.find(emp => emp.idEmpresa == empresaId)
-  
-  empresaInstancia.agregarImportacion(importacion)
+  const empresaId = form.selectEmpresaImport;
+  const empresaInstancia = empresas.empresas.find(
+    (emp) => emp.idEmpresa == empresaId
+  );
+
+  empresaInstancia.agregarImportacion(importacion);
   modalImportacion.hide();
   event.target.reset();
 };
 
 const handleButtonDisable = (empresas) => {
-  const button = document.getElementById("btnImportacion")
-  const tooltip = bootstrap.Tooltip.getInstance("#tooltipBtnImportacion")
-  const tieneEmpresas = empresas.length > 0
-  button.disabled = !tieneEmpresas
-  tieneEmpresas ? tooltip.disable() : tooltip.enable()
+  const button = document.getElementById("btnImportacion");
+  const tooltip = bootstrap.Tooltip.getInstance("#tooltipBtnImportacion");
+  const tieneEmpresas = empresas.length > 0;
+  button.disabled = !tieneEmpresas;
+  tieneEmpresas ? tooltip.disable() : tooltip.enable();
+};
 
-}
 
 export { formInputs, submitForm, modalImportacion, handleButtonDisable };
 

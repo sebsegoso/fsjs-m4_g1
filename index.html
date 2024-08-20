@@ -39,6 +39,8 @@
     <div class="accordion" id="accordionEmpresas"></div>
   </section>
 
+
+
   <!-- modal empresa -->
   <div class="modal fade" id="modalEmpresa" tabindex="-1" aria-labelledby="modalEmpresaLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -63,6 +65,23 @@
                 placeholder="Ingrese RUT de la empresa" />
               <div id="rutHelp" class="form-text text-danger"></div>
             </div>
+            <div class="mb-3">
+                <label for="rubroEmpresa" class="form-label">Rubro</label>
+                <select required class="form-select" id="rubroEmpresa">
+                <option value="" selected disabled>Seleccione el rubro</option>
+                </select>
+                <div id="rubroHelp" class="form-text text-danger"></div>
+            </div>
+            <div class="mb-3">
+              <label for="tamanoEmpresa" class="form-label">Tamaño de la importación</label>
+              <select required class="form-select" id="tamanoEmpresa">
+              <option value="" selected disabled>Seleccione tamaño</option>
+              <option value="pequena">Pequeña</option>
+              <option value="mediana">Mediana</option>
+              <option value="grande">Grande</option>
+              </select>
+              <div id="tamanoHelp" class="form-text text-danger"></div>
+          </div>
           </form>
         </div>
         <div class="modal-footer">
@@ -110,10 +129,17 @@
             </div>
             <div class="mb-3">
               <label for="empresaImport" class="form-label">Empresa que lo importa</label>
-              <select class="form-control w-50 m-2" name="empresa" id="empresaImport">
+              <select class="form-select" name="empresa" id="empresaImport">
                 <option value="" disabled selected>Selecciona una empresa</option>
               </select>
               <div id="empresaImportHelp" class="form-text text-danger"></div>
+            </div>
+            <div class="mb-3">
+              <label for="tipoProducto" class="form-label">Tipo de Producto</label>
+              <select class="form-select" id="tipoProducto">
+                <option value="" disabled selected>Selecciona el tipo de producto</option>
+              </select>
+              <div id="tipoProductoHelp" class="form-text text-danger"></div>
             </div>
           </form>
         </div>

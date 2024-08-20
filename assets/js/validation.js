@@ -7,6 +7,7 @@ export const getFormData = (formInputs = {}) => {
 
   for (let key in formInputs) {
     const input = document.getElementById(formInputs[key].inputId);
+    console.assert(input, `input no encontrado id: ${formInputs[key].inputId}`, input)
     const inputType = formInputs[key].type;
     switch (inputType) {
       case "checkbox":

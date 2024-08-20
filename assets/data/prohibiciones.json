@@ -1,0 +1,52 @@
+{
+    "no_importable": [
+        {
+            "producto": "Vehículos usados",
+            "excepciones": "Franquicias establecidas en normas vigentes"
+        },
+        {
+            "producto": "Motos usadas",
+            "excepciones": null
+        },
+        {
+            "producto": "Neumáticos usados y recauchados",
+            "excepciones": null
+        },
+        {
+            "producto": "Asbesto en cualquiera de sus formas",
+            "excepciones": null
+        },
+        {
+            "producto": "Productos farmacéuticos sin registro sanitario",
+            "excepciones": null
+        },
+        {
+            "producto": "Sustancias agotadoras de la capa de ozono y equipos que las contengan",
+            "excepciones": "Importadores autorizados en el registro de importadores"
+        },
+        {
+            "producto": "Residuos industriales tóxicos",
+            "excepciones": "Autorización especial según normativa"
+        },
+        {
+            "producto": "Pornografía infantil",
+            "excepciones": null
+        },
+        {
+            "producto": "Elementos lacrimógenos y otros productos químicos de efectos fisiológicos",
+            "excepciones": "Instituciones autorizadas según la ley 17.798"
+        },
+        {
+            "producto": "Fuegos artificiales y artículos pirotécnicos",
+            "excepciones": null
+        },
+        {
+            "producto": "Materiales o sustancias radiactivas",
+            "excepciones": "Autorización especial según normativa"
+        },
+        {
+            "producto": "Bienes culturales en casos de tráfico ilícito",
+            "excepciones": null
+        }
+    ]
+}

@@ -2,7 +2,9 @@ import { clearHelpMessages, getFormData, validateForm } from "../validation.js";
 import { Empresa } from "../classes/empresa.js";
 import { validaRut } from "../regex.js";
 
-const modalEmpresa = new bootstrap.Modal(document.getElementById("modalEmpresa"));
+const modalEmpresa = new bootstrap.Modal(
+  document.getElementById("modalEmpresa")
+);
 const formInputs = {
   rutEmpresa: {
     inputId: "rutEmpresa",
@@ -18,24 +20,26 @@ const formInputs = {
     required: true,
     type: "text",
   },
+  rubroEmpresa: {
+    inputId: "rubroEmpresa",
+    helpId: "rubroHelp",
+    label: "rubro de la empresa",
+    required: true,
+    type: "text",
+  },
+  tamanoEmpresa: {
+    inputId: "tamanoEmpresa",
+    helpId: "tamanoHelp",
+    label: "Tamaño de importación",
+    required: true,
+    type: "select",
+    options: [
+      { value: "sm", label: "Pequeña" },
+      { value: "md", label: "Mediana" },
+      { value: "lg", label: "Grande" },
+    ],
+  },
 };
-
-
-export function selectorEmpresas() {
-
-  const selector = document.getElementById('empresaImport');
-  const placeholder = selector.querySelector('option[value=""]');
-  selector.innerHTML = '';
-  selector.appendChild(placeholder); 
-
-  empresas.forEach((empresa, index) => {
-      const option = document.createElement('option');
-      option.value = index;
-      option.textContent = empresa.nombre;
-      selector.appendChild(option);
-  });
-}
-
 
 let nextEmpresaId = 1;
 
@@ -59,9 +63,10 @@ const submitForm = function (event) {
   const empresa = new Empresa(
     nextEmpresaId++,
     form.nombreEmpresa,
-    form.rutEmpresa
+    form.rutEmpresa,
+    form.rubroEmpresa,
+    form.tamanoEmpresa
   );
-  // selectorEmpresas();
   console.log(empresa);
   console.log(`Empresa ${empresa.nombre} creada con exito`);
   modalEmpresa.hide();
@@ -69,4 +74,4 @@ const submitForm = function (event) {
   return empresa;
 };
 
-export { formInputs, submitForm , modalEmpresa};
+export { formInputs, submitForm, modalEmpresa };

@@ -3,7 +3,8 @@ class Importacion {
   #producto;
   #numeroProductos;
   #precioUnitario;
-  constructor(idImportacion, producto, numeroProductos, precioUnitario) {
+
+  constructor(idImportacion, producto, numeroProductos, precioUnitario, isImportable) {
     this.#idImportacion = idImportacion;
     this.#producto = producto;
     this.#numeroProductos = numeroProductos;

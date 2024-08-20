@@ -2,11 +2,15 @@ class Empresa {
   #idEmpresa;
   #nombre;
   #rut;
+  #rubro;
+  #tamano;
   #importaciones;
-  constructor(idEmpresa, nombre, rut) {
+  constructor(idEmpresa, nombre, rut, rubro, tamano) {
     this.#idEmpresa = idEmpresa;
     this.#nombre = nombre;
     this.#rut = rut;
+    this.#rubro = rubro;
+    this.#tamano = tamano;
     this.#importaciones = [];
   }
 
@@ -20,6 +24,14 @@ class Empresa {
 
   get rut() {
     return this.#rut;
+  }
+
+  get rubro() {
+    return this.#rubro;
+  }
+
+  get tamano() {
+    return this.#tamano;
   }
 
   get importaciones() {
