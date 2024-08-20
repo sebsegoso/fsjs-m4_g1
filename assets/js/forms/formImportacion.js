@@ -50,16 +50,6 @@ const submitForm = function (event, empresas) {
     form.numeroProductos,
     form.precioUnitario,
   );
-<<<<<<< Updated upstream
-  console.log(importacion);
-  console.log(`Importación creada con exito`);
-  modalImportacion.hide();
-  event.target.reset();
-  this.reset();
-};
-
-export { formInputs, submitForm, modalImportacion };
-=======
 
   const empresaId = form.selectEmpresaImport
   const empresaInstancia = empresas.empresas.find(emp => emp.idEmpresa == empresaId)
@@ -81,4 +71,3 @@ const handleButtonDisable = (empresas) => {
 export { formInputs, submitForm, modalImportacion, handleButtonDisable };
 
 
->>>>>>> Stashed changes

@@ -1,3 +1,8 @@
+## Diagrama UML
+
+![Diagrama](assets/img/Diagram.drawio.png )
+
+
 Aduana de Chile, necesita crear un software que registre el ingreso de las distintas
 empresas que realizan importaciones, además de clasificarlas por id de registro, nombre y
 rut. Aduanas también requiere saber el total de importaciones de la empresa.
