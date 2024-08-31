@@ -77,6 +77,7 @@ class Empresa {
         <td>${importacion.producto}</td>
         <td>${importacion.numeroProductos}</td>
         <td>${importacion.precioUnitario}</td>
+        <td>${importacion.tipo}</td>
         <td>
           <button class="btn btn-danger btn-sm eliminar-importacion-btn" data-importacion-id="${importacion.idImportacion}">Eliminar</button>
         </td>
@@ -110,6 +111,7 @@ class Empresa {
                   <th>Producto</th>
                   <th>Numero de Productos</th>
                   <th>Precio</th>
+                  <th>Tipo</th>
                   <th>Eliminar</th>
                   <p></p>
                 </tr>

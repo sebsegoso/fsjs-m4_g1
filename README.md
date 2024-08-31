@@ -32,21 +32,28 @@ de las importaciones de la empresa.
 
 ## REQUERIMIENTOS
 
-1. Crear todo el código usando ES6. (1 punto)
+[x] 1. Crear todo el código usando ES6. (1 punto)
+
 2. Genera un diagrama UML de la relación de ambas Clases (se recomienda el uso de
    www.drawio.com). (1 punto)
-3. Crear una Clase para cada objeto. (2 puntos)
+
+[x] 3. Crear una Clase para cada objeto. (2 puntos)
+
 4. Crear los siguientes métodos: (3 puntos)
-   a. Agregar Importación
-   b. Suma total de importaciones
+  [x] a. Agregar Importación
+  [x] b. Suma total de importaciones
    c. Suma total por el número de productos y su precio unitario
+
 5. Generar una clase extendida que herede los atributos de los importadores y que
    diferencie a estos por rubro y tamaño de importador (3 puntos)
+
 6. Generar un formulario que filtre los inputs según las condiciones de importación
    de visación o prohibición. (1 punto)
+
 7. Mostrar una tabla con la información de las importaciones de las empresas y sus
    atributos (4 puntos)
    Requerimiento opcional
+   
 8. Generar un dashboard dinámico que resuma la información para cada empresa
    seleccionada
    El trabajo debe ser subido en formato zip, rar o archivo de texto con URL del repositorio

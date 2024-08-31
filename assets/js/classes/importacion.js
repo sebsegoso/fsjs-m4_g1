@@ -3,12 +3,14 @@ class Importacion {
   #producto;
   #numeroProductos;
   #precioUnitario;
+  #tipo;
 
-  constructor(idImportacion, producto, numeroProductos, precioUnitario, isImportable) {
+  constructor(idImportacion, producto, numeroProductos, precioUnitario, tipo) {
     this.#idImportacion = idImportacion;
     this.#producto = producto;
     this.#numeroProductos = numeroProductos;
     this.#precioUnitario = precioUnitario;
+    this.#tipo = tipo;
   }
 
   get idImportacion() {
@@ -37,6 +39,14 @@ class Importacion {
 
   set precioUnitario(precioUnitario) {
     this.#precioUnitario = precioUnitario;
+  }
+
+  get tipo() {
+    return this.#tipo;
+  }
+
+  set tipo(tipo) {
+    this.#tipo = tipo;
   }
 
   calcularTotal() {

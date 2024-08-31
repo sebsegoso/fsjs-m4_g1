@@ -33,6 +33,13 @@ const formInputs = {
     required: true,
     type: "select",
   },
+  tipo:{
+    inputId: "tipoProducto",
+    helpId: "tipoProductoHelp",
+    label: "tipo de producto",
+    required: true,
+    type: "select",
+  }
 };
 
 let nextImportacionId = 1;
@@ -51,10 +58,13 @@ const submitForm = function (event, empresas) {
     form.producto,
     form.numeroProductos,
     form.precioUnitario,
+    form.tipo
   );
 
+  console.log(`👁 ~ submitForm ~ importacion:`, importacion)
   const empresaId = form.selectEmpresaImport;
   const empresaInstancia = empresas.empresas.find(
+
     (emp) => emp.idEmpresa == empresaId
   );
 
